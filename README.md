@@ -10,4 +10,4 @@ var attachedBall:GameObject = null; // to be used later in code
 
 Must remember to remove gravity on bouncy objects.
 
-More for later...
+When adding new scenes remember to add them to the build settings and in a certain order.

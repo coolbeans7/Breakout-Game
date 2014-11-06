@@ -14,6 +14,8 @@ function Update () {
 		// lives -1
 		// reset ball, destroy it
 		
+		gameController.lives--;
+		
 		transform.position.y = GameObject.FindGameObjectWithTag("paddle").transform.position.y+5.5;
 		transform.position.x = GameObject.FindGameObjectWithTag("paddle").transform.position.x;
 		ball.rigidbody.Sleep();
@@ -22,6 +24,12 @@ function Update () {
 		pcontroller = GameObject.FindGameObjectWithTag("paddle").GetComponent(paddleController);
 		pcontroller.attachedBall = this.gameObject;
 	}
+	
+	if (gameController.lives == 0)
+	{
+		Application.LoadLevel("gameover");
+	}
+	
 }
 
 function OnCollisionEnter(col:Collision) {
@@ -33,5 +41,10 @@ function OnCollisionEnter(col:Collision) {
 	if (col.gameObject.tag == "block") {
 		audio.PlayOneShot(bricksound, 0.5);
 		Destroy(col.gameObject);
+		
+		if (gameController.score >= 0)
+		{
+			gameController.score = gameController.score + 10;
+		}
 	}
 }

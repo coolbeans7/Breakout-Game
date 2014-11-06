@@ -1,4 +1,6 @@
 ﻿var block:GameObject;
+static var score:int = 0;
+static var lives:int = 3;
 
 function Start () {
 
@@ -7,6 +9,16 @@ function Start () {
 }
 
 function Update () {
+
+}
+
+function OnGUI () {
+	
+	GUI.color = Color.white;
+	GUI.Label (Rect(50, 10, 100, 50), "Score: " + score);
+
+	GUI.color = Color.white;
+	GUI.Label (Rect(725, 10, 100, 50), "Lives: " + lives);
 
 }
 
