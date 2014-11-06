@@ -11,3 +11,5 @@ var attachedBall:GameObject = null; // to be used later in code
 Must remember to remove gravity on bouncy objects.
 
 When adding new scenes remember to add them to the build settings and in a certain order.
+
+Manged to freeze Unity through a script that built N blocks on update instead of just Start
